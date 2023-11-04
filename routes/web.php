@@ -15,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    /*
     $post=new post();
     $post->title='test title';
     $post->content = 'test content';
     $post->save();
+    */
+    Post::create([
+        'title'=> 'created title',
+        'content'=>'created content',
+    ]);
 });
