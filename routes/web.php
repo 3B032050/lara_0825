@@ -29,7 +29,17 @@ Route::get('/', function () {
     echo '標題: '.$post->title.'<br>';
     echo '內容: '.$post->content.'<br>';
     dd($post);
-    */
+
+    $posts=Post::all();
+    foreach($posts as $post)
+    {
+        echo '編號: '.$post->id.'<br>';
+        echo '標題: '.$post->title.'<br>';
+        echo '內容: '.$post->content.'<br>';
+        echo '張貼時間: '.$post->created_at.'<br>';
+    }
+    dd($post);
+
     $posts=Post::where('id','<',10)->orderby('id','DESC')->get();
     foreach($posts as $post)
     {
@@ -39,6 +49,12 @@ Route::get('/', function () {
         echo '張貼時間: '.$post->created_at.'<br>';
     }
     dd($post);
+    */
+    $post=Post::find(1);
+    $post->update([
+        'title'=>'update title',
+        'content'=>'updated content',
+    ]);
 
 
 
