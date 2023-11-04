@@ -30,7 +30,7 @@ Route::get('/', function () {
     echo '內容: '.$post->content.'<br>';
     dd($post);
     */
-    $posts=Post::all();
+    $posts=Post::where('id','<',10)->orderby('id','DESC')->get();
     foreach($posts as $post)
     {
         echo '編號: '.$post->id.'<br>';
