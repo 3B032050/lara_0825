@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     /*
+     //save方法新增資料
     $post=new post();
     $post->title='test title';
     $post->content = 'test content';
@@ -25,6 +26,7 @@ Route::get('/', function () {
         'title'=> 'created title',
         'content'=>'created content',
     ]);
+
     $post=Post ::find(1);
     echo '標題: '.$post->title.'<br>';
     echo '內容: '.$post->content.'<br>';
@@ -55,11 +57,19 @@ Route::get('/', function () {
         'title'=>'update title',
         'content'=>'updated content',
     ]);
-    */
+
     $post=Post::find(1);
     $post->title='saved title';
     $post->content='saved content';
     $post->save();
+    */
+    /*
+    $post=Post::find(1);
+    $post->delete();*/
+    /*
+    $post=Post::destroy(2);
+    */
+    $post=Post::destroy(3,5,7);
 
 
 
